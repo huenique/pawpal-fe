@@ -9,12 +9,11 @@ export default function About() {
             className="flex min-h-screen bg-center bg-no-repeat bg-cover"
             style={{ backgroundImage: `url("${bg}")` }}
         >
-            <div className="flex flex-column justify-center py-4 px-8 mx-8">
-
-                <span className="block text-5xl font-italic text-white text-center" style={{textShadow: "-1px -1px 0 #000000"}}>Be a Part of</span>
-                <span className="block text-8xl font-bold text-white text-center" style={{textShadow: "-2px -2px 0 #000000"}}>Our Mission</span>
+            <div className="flex flex-column justify-center py-4 px-8 mx-8 z-5">
+                <span className="block text-5xl font-italic text-blue-900 text-center" style={{textShadow: "-1px -1px 0 #ffffff"}}>Be a Part of</span>
+                <span className="block text-8xl font-bold text-blue-900 text-center" style={{textShadow: "-2px -1px 0 #ffffff"}}>Our Mission</span>
                 <div className="pt-2">
-                    <span className="block text-5xl text-white text-center" style={{textShadow: "-1px -1px 0 #000000"}}>
+                    <span className="block text-5xl text-blue-900 text-center" style={{textShadow: "-1px 0 #ffffff"}}>
                     Pawpal aims to work in ensuring the prevention of cruelty and suffering of animals.
                     It strives towards protection and promotion of their welfare by advocating an improvement to their living conditions,
                     by campaigning to eliminate causes that bring about pain and discomfort to the animals.
