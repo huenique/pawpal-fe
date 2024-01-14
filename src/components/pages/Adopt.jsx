@@ -8,6 +8,7 @@ import { DataView } from "primereact/dataview";
 import React from "react";
 import { confirmDialog, ConfirmDialog } from "primereact/confirmdialog";
 import { Toast } from "primereact/toast";
+import { InputText } from "primereact/inputtext";
 
 
 export default function Adopt() {
@@ -15,6 +16,7 @@ export default function Adopt() {
     const [basketPets, setBasketPets] = useState([]);
     const [products, setProducts] = useState([]);
     const [view, setView] = useState(false);
+    const [info, setInfo] = useState(false);
 
     const toast = useRef(null);
 
@@ -130,6 +132,7 @@ export default function Adopt() {
             icon="pi pi-check"
             onClick={() => {
               setView(false);
+              setInfo(true);
             }}
             severity="primary"
           />
@@ -207,6 +210,50 @@ export default function Adopt() {
         >
           <div className="flex flex-column p-3 overflow-y-auto max-h-25rem">
             <DataView value={basketPets} itemTemplate={basketTemplate} />
+          </div>
+        </Dialog>
+        <Dialog
+          header="Fill out information"
+          visible={info}
+          className="p-fluid"
+          style={{ width: "50vw" }}
+          onHide={() => {
+            setInfo(false);
+          }}
+          footer={viewFooterDialog}
+        >
+          <div className="flex flex-column p-3 overflow-y-auto max-h-25rem">
+            <div className="flex m-2 align-items-center justify-content-center surface-card shadow-2 border-round p-4">
+              <div className="col flex flex-column align-items-start">
+                  <label htmlFor='name' className="text-900 font-medium mb-2">
+                    Name
+                  </label>
+                  <span className="p-input-icon-left">
+                    <i className="pi pi-user" />
+                    <InputText
+                      name="name"
+                    />
+                  </span>
+                  <label htmlFor='desc' className="text-900 font-medium my-2">
+                    Description
+                  </label>
+                  <span className="p-input-icon-left">
+                    <i className="pi pi-info-circle" />
+                    <InputText
+                      name="desc"
+                    />
+                  </span>
+                  <label htmlFor='desc' className="text-900 font-medium my-2">
+                    Attachment
+                  </label>
+                  <span className="p-input-icon-left">
+                    <i className="pi pi-paperclip" />
+                    <InputText
+                      name="desc"
+                    />
+                  </span>
+                </div>
+              </div>
           </div>
         </Dialog>
     </div>
